@@ -30,43 +30,38 @@ These are the main functions that will be returned by **$.theme**.
     t.append('Green');
     t.append(['Green', 'Background Image']);
     
-* **append** - Creates the CSS and puts it on the page. Use the themes' names to call them. You can also use an array of names to append multiple elements.
-
+**append** - Creates the CSS and puts it on the page. Use the themes' names to call them. You can also use an array of names to append multiple elements.
 
     t.detach('Green');
     t.detach(['Green', 'Background Image']);
     
-* **detach** - Destroys CSS associated with the name(s) given.
-
+**detach** - Destroys CSS associated with the name(s) given.
 
     t.replace('Green', 'Pink');
     t.replace(['Green', 'BG Image - Green'], ['Pink', 'BG Image - Pink']);
     t.replace('Green', ['Pink', 'Background Image']);
     
-* **replace** - Detaches the first parameter and appends the second.
-
+**replace** - Detaches the first parameter and appends the second.
 
     t.addTheme({name:'Pink', style:'body{background-color:#cc0055}'});
     t.addTheme([{name:'Pink', style:'body{background-color:#cc0055}'}, {name:'Blue', src:'blue.css'}]);
     
-* **addTheme** - Add themes to your existing repertoire.
+**addTheme** - Add themes to your existing repertoire.
 
 ## Behind the scenes functions and variables
 These are functions and variables that I don't suggest you use, but, if you decide to edit jQTheme, you should understand what they do and how to do it.
 
-* **ids** - This is an array of integers. The integers correspond to active CSS. Each CSS has a data-identification defined with its ID number.
-* **themes** - Array of your theme objects.
-* **name** - The name of the theme set. If a name was not chosen, it returns undefined.
-
-
     t.construct({name:'Pink', style:'body{background-color:#cc0055}'});
-
-* **construct** - Constucts the CSS elements based on the theme element. Do not use this indepently from **append** as it will become difficult to **detach** and **replace**.
-
+    
+**construct** - Constucts the CSS elements based on the theme element. Do not use this independently from **append** as it will become difficult to **detach** and **replace**.
 
     t.retThNa('Pink');
     
-* **retThNa** - Searches for a registered theme object based on its name and returns the theme object. The name is from "**ret**urn **Th**rough **Na**me."
+**retThNa** - Searches for a registered theme object based on its name and returns the theme object.
+
+* **ids** - An array of the ID numbers of active CSS. The CSS elements have this stored in their "data-identification" attribute.
+* **themes** - An array of theme objects.
+* **name** - The name given to the theme set. If no name was given, returns undefined.
 
 ## License: Public Domain
-Please don't rename it or change credit away from me, James Anthony Bruno, because that would make me sad. It is fine, however, to make changes to jQAV's core to suit your needs for use in your products (whether commercial, personal, or non-profit). If you believe you've found a better way for jQAV to work, go ahead and message me and let me know! I would love to implement your fix.
+Please don't rename it or change credit away from me, James Anthony Bruno, because that would make me sad. It is fine, however, to make changes to jQTheme's core to suit your needs for use in your products (whether commercial, personal, or non-profit). If you believe you've found a better way for jQTheme to work, go ahead and message me and let me know! I would love to implement your fix.
